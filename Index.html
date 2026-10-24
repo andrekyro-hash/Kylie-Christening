@@ -1,0 +1,1917 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff5f5">
+<title>Kylie Rae | My Christening Day</title>
+
+<!-- =====================================================
+     KYLIE RAE'S CHRISTENING INVITATION
+     ONE-FILE WEBSITE: index.html
+     EDIT YOUR INFORMATION IN THE SECTIONS MARKED BELOW.
+     Works offline in a modern browser. No libraries needed.
+====================================================== -->
+
+<style>
+/* ========== 1. COLOR THEME: EDIT COLORS HERE ========== */
+:root {
+  --pink: #e9aebc;
+  --pink-dark: #b86f86;
+  --pink-light: #fff0f3;
+  --beige: #f4e8d9;
+  --cream: #fffaf6;
+  --brown: #755b54;
+  --text: #594744;
+  --muted: #9c827b;
+  --white: #ffffff;
+  --shadow: 0 12px 35px rgba(129, 83, 92, .10);
+  --radius: 24px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.no-scroll { overflow: hidden; }
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+img { max-width: 100%; display: block; }
+
+::selection {
+  background: var(--pink);
+  color: white;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin-inline: auto;
+}
+
+.section {
+  padding: 90px 0;
+  position: relative;
+}
+
+.section-heading {
+  text-align: center;
+  margin: 0 auto 42px;
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--pink-dark);
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 5vw, 45px);
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--brown);
+  margin-bottom: 15px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.script {
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding: 13px 23px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .25s, background .25s, box-shadow .25s;
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #d992a7, #b86f86);
+  box-shadow: 0 8px 22px rgba(184, 111, 134, .23);
+}
+
+.btn-outline {
+  color: var(--pink-dark);
+  border-color: #e7bdc8;
+  background: rgba(255,255,255,.65);
+}
+
+.btn-outline:hover { background: var(--pink-light); }
+
+.card {
+  background: rgba(255,255,255,.83);
+  border: 1px solid rgba(222, 185, 175, .35);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(129, 83, 92, .14);
+}
+
+/* ========== NAVIGATION ========== */
+.navbar {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background: rgba(255, 250, 246, .94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(222,185,175,.3);
+}
+
+.nav-inner {
+  width: min(1200px, 94%);
+  min-height: 72px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--brown);
+  font-family: Georgia, serif;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.brand-flower {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #f9dce3, #f4e8d9);
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 700;
+  color: #806963;
+  position: relative;
+  transition: color .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--pink-dark); }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--pink-dark);
+  transition: width .25s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  border-radius: 12px;
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  width: 43px;
+  height: 43px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ========== HOME / HERO ========== */
+.hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 90px 0 100px;
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(249,213,223,.78), transparent 36%),
+    radial-gradient(ellipse at 88% 70%, rgba(239,220,194,.62), transparent 38%),
+    linear-gradient(135deg, #fff8f6, #fff0f3 55%, #fbf0e4);
+}
+
+.hero::before,
+.hero::after {
+  content: "✿";
+  position: absolute;
+  font-size: 160px;
+  color: rgba(207, 143, 159, .13);
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero::before { top: 7%; left: -30px; }
+.hero::after { bottom: 0; right: -15px; animation-delay: -3s; }
+
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.7);
+  border: 1px solid #efd4da;
+  border-radius: 50px;
+  padding: 8px 17px;
+  font-size: 11px;
+  color: var(--pink-dark);
+  letter-spacing: 2px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(54px, 10vw, 100px);
+  line-height: 1.03;
+  color: var(--pink-dark);
+  margin-bottom: 8px;
+  letter-spacing: -3px;
+}
+
+.hero-subtitle {
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 4vw, 29px);
+  color: var(--brown);
+  margin-bottom: 16px;
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--pink-dark);
+  margin: 23px auto;
+}
+
+.hero-divider::before,
+.hero-divider::after {
+  content: "";
+  width: 55px;
+  height: 1px;
+  background: #deb5bf;
+}
+
+.hero-description {
+  max-width: 580px;
+  margin: 0 auto 26px;
+  color: #846d66;
+  font-size: 15px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-flower {
+  font-size: 38px;
+  display: block;
+  margin: 15px 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Decorative flower corners */
+.flower {
+  position: absolute;
+  pointer-events: none;
+  opacity: .5;
+  font-size: 28px;
+}
+
+/* ========== ABOUT ========== */
+.about-section {
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-art {
+  min-height: 380px;
+  border-radius: 160px 160px 35px 35px;
+  background:
+    radial-gradient(circle at 50% 40%, #fff8f6 0 24%, transparent 25%),
+    linear-gradient(145deg, #f9dfe5, #f3e7d6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid white;
+  outline: 1px solid #efd9d8;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-art .crown { font-size: 65px; }
+
+.about-art .baby-name {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  color: var(--pink-dark);
+}
+
+.about-art .baby-caption {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--brown);
+  text-transform: uppercase;
+}
+
+.about-art .little-heart {
+  position: absolute;
+  color: rgba(184,111,134,.28);
+  font-size: 45px;
+}
+
+.about-copy p { color: #89746d; }
+
+.about-copy .quote {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  line-height: 1.6;
+  color: var(--brown);
+  border-left: 3px solid var(--pink);
+  padding-left: 20px;
+  margin: 24px 0;
+}
+
+/* ========== GALLERY ========== */
+.gallery-section {
+  background: linear-gradient(180deg, #fff5f5, #fffaf6);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.gallery-item {
+  position: relative;
+  min-height: 240px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #f9e2e8, #f2e4d5);
+  border: 5px solid white;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  color: var(--pink-dark);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  object-fit: cover;
+  transition: transform .5s;
+}
+
+.gallery-item:hover img { transform: scale(1.06); }
+
+.gallery-placeholder {
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+}
+
+.gallery-placeholder .placeholder-icon { font-size: 45px; }
+.gallery-placeholder span:last-child { font-size: 12px; color: #a47d83; }
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 12px 12px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  background: linear-gradient(transparent, rgba(75,40,48,.58));
+}
+
+/* Gallery lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(48, 32, 36, .92);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-height: 82vh;
+  max-width: 90vw;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* ========== GODPARENTS ========== */
+.godparents-section { background: white; }
+
+.godparents-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.godparent-card { padding: 32px; }
+
+.godparent-top {
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.godparent-icon {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  background: linear-gradient(145deg, #fff0f3, #f1e3d3);
+  font-size: 32px;
+}
+
+.godparent-top h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 500;
+  color: var(--pink-dark);
+  margin-bottom: 5px;
+}
+
+.godparent-top p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.name-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.name-list li {
+  padding: 12px 10px;
+  background: #fff8f6;
+  border: 1px solid #f4e7e4;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  transition: background .2s, transform .2s;
+}
+
+.name-list li:hover {
+  background: var(--pink-light);
+  transform: translateY(-2px);
+}
+
+/* ========== GIFTS ========== */
+.gifts-section {
+  background:
+    radial-gradient(ellipse at 0 0, #fae8eb, transparent 40%),
+    #fffaf6;
+}
+
+.gifts-card {
+  max-width: 800px;
+  margin: auto;
+  padding: 38px;
+}
+
+.gifts-intro {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 27px;
+}
+
+.gift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.gift-item {
+  text-align: center;
+  padding: 20px 10px;
+  background: white;
+  border: 1px solid #f0e1df;
+  border-radius: 17px;
+  transition: transform .25s, background .25s;
+}
+
+.gift-item:hover {
+  transform: translateY(-4px);
+  background: #fff1f4;
+}
+
+.gift-item .gift-icon { font-size: 31px; margin-bottom: 7px; }
+.gift-item p { font-size: 13px; font-weight: 700; margin: 0; }
+
+.gift-note {
+  margin: 26px 0 0;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: var(--pink-dark);
+}
+
+/* ========== LOCATION CARDS ========== */
+.location-section { background: white; }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.location-card { overflow: hidden; }
+
+.location-banner {
+  min-height: 175px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.65), transparent 25%),
+    linear-gradient(135deg, #f7dfe5, #f3e7d8);
+  display: grid;
+  place-items: center;
+  font-size: 58px;
+  position: relative;
+}
+
+.location-banner.church {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.65), transparent 25%),
+    linear-gradient(135deg, #f0e4d4, #f8dfe5);
+}
+
+.location-body { padding: 27px; }
+
+.location-body h3 {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: var(--brown);
+  margin-bottom: 10px;
+}
+
+.location-body p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.location-detail {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 13px 0;
+  border-top: 1px solid #f2e8e4;
+  font-size: 13px;
+}
+
+.location-detail .detail-icon { font-size: 19px; }
+
+.location-detail strong {
+  display: block;
+  color: var(--brown);
+}
+
+.location-detail span:last-child { color: var(--muted); }
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* ========== HEALTH PROTOCOL ========== */
+.health-section {
+  background: linear-gradient(145deg, #fff0f3, #fffaf6 70%);
+}
+
+.health-card {
+  max-width: 900px;
+  margin: auto;
+  padding: 35px;
+}
+
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 17px;
+}
+
+.health-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255,255,255,.8);
+  border: 1px solid #f1dfdf;
+  border-radius: 16px;
+}
+
+.health-icon {
+  flex: 0 0 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--pink-light);
+  border-radius: 50%;
+  font-size: 21px;
+}
+
+.health-item strong { display: block; margin-bottom: 4px; }
+.health-item p { margin: 0; font-size: 13px; color: var(--muted); }
+
+.health-reminder {
+  margin-top: 24px;
+  padding: 18px;
+  text-align: center;
+  border-radius: 15px;
+  background: #f8eee3;
+  color: #80665c;
+  font-size: 13px;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 55px 0 25px;
+  text-align: center;
+  color: #f9e8eb;
+  background: linear-gradient(135deg, #966b74, #735951);
+}
+
+.footer-flower { font-size: 31px; }
+
+.footer h2 {
+  font-size: 38px;
+  color: white;
+  margin: 8px 0;
+}
+
+.footer p {
+  color: #f2dfe0;
+  font-size: 13px;
+}
+
+.footer .copyright {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.16);
+  font-size: 11px;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  background: var(--pink-dark);
+  box-shadow: 0 6px 18px rgba(129,83,92,.25);
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: .25s;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ========== MOBILE RESPONSIVENESS ========== */
+@media (max-width: 900px) {
+  .nav-links { gap: 12px; }
+  .nav-links a { font-size: 11px; }
+  .about-grid { gap: 30px; }
+}
+
+@media (max-width: 760px) {
+  .section { padding: 68px 0; }
+
+  .nav-inner { min-height: 65px; }
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: rgba(255,250,246,.98);
+    padding: 15px 5% 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-bottom: 1px solid #eedbd9;
+    box-shadow: 0 12px 25px rgba(129,83,92,.1);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .nav-links a::after { display: none; }
+
+  .hero {
+    min-height: 620px;
+    padding: 80px 0;
+  }
+
+  .hero h1 { letter-spacing: -2px; }
+
+  .about-grid,
+  .godparents-grid,
+  .location-grid { grid-template-columns: 1fr; }
+
+  .about-art {
+    min-height: 310px;
+    max-width: 420px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item, .gallery-item img, .gallery-placeholder { min-height: 190px; }
+
+  .godparent-card { padding: 24px 18px; }
+  .gifts-card, .health-card { padding: 24px 17px; }
+  .gift-grid { grid-template-columns: repeat(2, 1fr); }
+  .health-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 400px) {
+  .container { width: 92%; }
+  .gallery-grid { gap: 10px; }
+  .gallery-item, .gallery-item img, .gallery-placeholder { min-height: 155px; }
+  .name-list { grid-template-columns: 1fr; }
+  .hero-badge { font-size: 9px; letter-spacing: 1.5px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .hero-buttons .btn { width: 100%; max-width: 270px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<header class="navbar">
+  <div class="nav-inner">
+    <a class="brand" href="#home" aria-label="Kylie Rae home">
+      <span class="brand-flower">🌸</span>
+      <span>Kylie Rae</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#ninong">Godparents</a>
+      <a href="#gifts">Gifts</a>
+      <a href="#church">Church</a>
+      <a href="#reception">Reception</a>
+      <a href="#health">Health Protocol</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ========== HOME ========== -->
+<section class="hero" id="home">
+  <span class="flower" style="top:15%;right:13%">✿</span>
+  <span class="flower" style="bottom:20%;left:10%">♡</span>
+
+  <div class="container hero-content reveal">
+    <div class="hero-badge">✧ A Special Day of Faith & Love ✧</div>
+
+    <span class="hero-flower">👑</span>
+
+    <!-- EDIT: BABY'S NAME -->
+    <h1>Kylie Rae</h1>
+
+    <div class="hero-subtitle">My Holy Christening</div>
+
+    <div class="hero-divider">♡</div>
+
+    <!-- EDIT: YOUR INTRODUCTION -->
+    <p class="hero-description">
+      Hi, everyone! I'm a little princess blessed with so much love and
+      happiness. 👶🏻💗 I'm excited to begin my journey of faith and receive
+      God's blessings on my special Christening Day. Thank you for being
+      part of my beautiful story.
+    </p>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#church">♡ Explore My Invitation</a>
+      <a class="btn btn-outline" href="#gallery">View My Gallery ✧</a>
+    </div>
+
+    <p style="margin:25px 0 0;font-family:Georgia,serif;font-style:italic;color:#a77c83;font-size:14px">
+      A little blessing, a lifetime of love.
+    </p>
+  </div>
+</section>
+
+<!-- ========== ABOUT ME ========== -->
+<section class="section about-section" id="about">
+  <div class="container about-grid">
+    <div class="about-art reveal">
+      <span class="little-heart" style="top:18%;left:14%">♡</span>
+      <span class="little-heart" style="bottom:18%;right:12%">✿</span>
+      <span class="crown">👑</span>
+      <span class="baby-name">Kylie Rae</span>
+      <span class="baby-caption">God's Little Princess</span>
+      <span style="font-size:27px;margin-top:15px">🧸 🌷 🕊️</span>
+    </div>
+
+    <div class="about-copy reveal">
+      <span class="eyebrow">A Little About Me</span>
+      <h2>Small Hands,<br>Big Blessings</h2>
+
+      <p class="quote">
+        "Every good and perfect gift is from above."
+      </p>
+
+      <p>
+        Hello, lovely people! I'm Kylie Rae, a little bundle of joy who has
+        filled my family's hearts with endless love. I am about to take a
+        beautiful first step in my journey of faith.
+      </p>
+
+      <p>
+        My Christening is a celebration of God's love, the beginning of my
+        spiritual journey, and a special day to share with the wonderful
+        people who will help guide me as I grow.
+      </p>
+
+      <p>
+        Thank you for making this milestone even more meaningful by being
+        part of my story. I can't wait to celebrate with you! 💗
+      </p>
+
+      <a href="#ninong" class="btn btn-outline">Meet My Godparents ♡</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="section gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Little Moments, Precious Memories</span>
+      <h2>My Little Gallery</h2>
+      <p>A few lovely memories of your little princess. Tap a photo to view it larger.</p>
+    </div>
+
+    <!--
+      EDIT GALLERY:
+      Replace each placeholder with your photo.
+      Example:
+      <button class="gallery-item" data-full="photos/kylie1.jpg">
+        <img src="photos/kylie1.jpg" alt="Kylie Rae">
+        <span class="gallery-label">My Sweet Smile</span>
+      </button>
+
+      NOTE: To keep everything in ONE FILE, you may embed photos as
+      Base64 data URLs instead of using separate photo files.
+    -->
+
+    
+<button class="gallery-item reveal" type="button"
+  data-full="photos/kylie1.jpg"
+  aria-label="Kylie Rae photo">
+  <img src="photos/kylie1.jpeg" alt="Kylie Rae's sweet smile">
+  <span class="gallery-label">Sweet Dreams, Princess</span>
+</button>
+
+
+   <button class="gallery-item reveal" type="button"
+  data-full="photos/kylie6.jpg"
+  aria-label="Kylie Rae photo">
+  <img src="photos/kylie6.png" alt="Kylie Rae's sweet smile">
+  <span class="gallery-label">My Sweet Smile</span>
+</button>
+
+   <button class="gallery-item reveal" type="button"
+  data-full="photos/kylie3.jpg"
+  aria-label="Kylie Rae photo">
+  <img src="photos/kylie3.png" alt="Kylie Rae's sweet smile">
+  <span class="gallery-label">Hello, Everyone!</span>
+</button>
+
+
+   <button class="gallery-item reveal" type="button"
+  data-full="photos/kylie4.jpg"
+  aria-label="Kylie Rae photo">
+  <img src="photos/kylie4.png" alt="Kylie Rae's sweet smile">
+  <span class="gallery-label">Little Miss Sunshine</span>
+</button>
+
+
+   <button class="gallery-item reveal" type="button"
+  data-full="photos/kylie5.jpg"
+  aria-label="Kylie Rae photo">
+  <img src="photos/kylie5.png" alt="Kylie Rae's sweet smile">
+  <span class="gallery-label">My Peaceful World</span>
+</button>
+
+      <button class="gallery-item reveal" type="button"
+  data-full="photos/kylie2.jpg"
+  aria-label="Kylie Rae photo">
+  <img src="photos/kylie2.png" alt="Kylie Rae's sweet smile">
+  <span class="gallery-label">Our Little Blessing</span>
+</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== NINONG ========== -->
+<section class="section godparents-section" id="ninong">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">My Spiritual Guides</span>
+      <h2>My Dear Godparents</h2>
+      <p>Thank you for being part of my life and helping guide my journey of faith.</p>
+    </div>
+
+    <div class="godparents-grid">
+      <article class="card godparent-card reveal">
+        <div class="godparent-top">
+          <div class="godparent-icon">🤵🏻</div>
+          <h3>My Ninongs</h3>
+          <p>My wonderful godfathers</p>
+        </div>
+
+        <!-- EDIT: NINONG NAMES -->
+        <ol class="name-list">
+          <li>Adrian C. Genobiagon</li>
+          <li>Jumark Alicabo</li>
+          <li>Delbert Chimiko Quine</li>
+          <li>Daryl Vincent Apostol</li>
+          <li>Pj Fiones</li>
+          <li>Jerry Caburnay Jr</li>
+          <li>Christian Sabellano</li>
+          <li>Glen Angeles</li>
+          <li>Warren Hautia</li>
+          <li>Joven De Gracia</li>
+        </ol>
+      </article>
+
+      <article class="card godparent-card reveal" id="ninang">
+        <div class="godparent-top">
+          <div class="godparent-icon">👗</div>
+          <h3>My Ninangs</h3>
+          <p>My lovely godmothers</p>
+        </div>
+
+        <!-- EDIT: NINANG NAMES -->
+        <ol class="name-list">
+          <li>Criselda R. Genobiagon</li>
+          <li>Kaye Justine Divinagracia</li>
+          <li>Chennie Rose Alcantara</li>
+          <li>Jeshaville Gentiles</li>
+          <li>Shena Lajera</li>
+          <li>Rhap Sato</li>
+          <li>Louis Tyra Pelegrino</li>
+          <li>Mai Paler</li>
+          <li>Mommy Reyo</li>
+          <li>Andrea Pandamon</li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GIFTS GUIDE ========== -->
+<section class="section gifts-section" id="gifts">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">A Little Something From the Heart</span>
+      <h2>Gifts Guide</h2>
+      <p>Your presence is already a wonderful gift. For those who wish to bring something, here are a few ideas.</p>
+    </div>
+
+    <div class="card gifts-card reveal">
+      <div class="gifts-intro">
+        <span style="font-size:35px">🎁</span>
+        <p style="margin:8px 0 0">Anything given with love will be treasured.</p>
+      </div>
+
+      <!-- EDIT: GIFT SUGGESTIONS -->
+      <div class="gift-grid">
+        <div class="gift-item">
+          <div class="gift-icon">👗</div>
+          <p>Baby Clothes</p>
+        </div>
+
+        <div class="gift-item">
+          <div class="gift-icon">💌</div>
+          <p>Monetary Gifts</p>
+        </div>
+
+        <div class="gift-item">
+          <div class="gift-icon">🩲</div>
+          <p>EQ Dry Pants (S)</p>
+        </div>
+
+        <div class="gift-item">
+          <div class="gift-icon">🧻</div>
+          <p>Wet Wipes</p>
+        </div>
+
+        <div class="gift-item">
+          <div class="gift-icon">🧩</div>
+          <p>Educational Toys</p>
+        </div>
+
+        <div class="gift-item">
+          <div class="gift-icon">💗</div>
+          <p>Love & Prayers</p>
+        </div>
+      </div>
+
+      <p class="gift-note">
+        "Your love and presence will always be the most precious gift of all." ♡
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CHURCH ========== -->
+<section class="section location-section" id="church">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">The Beginning of My Faith Journey</span>
+      <h2>Church Ceremony</h2>
+      <p>Join us as we gather in prayer and celebrate this beautiful sacrament.</p>
+    </div>
+
+    <article class="card location-card reveal">
+      <div class="location-banner church">⛪ 🕊️ 🌸</div>
+
+      <div class="location-body">
+        <span class="eyebrow">Holy Christening Ceremony</span>
+        <h3>Sto Niño Parish</h3>
+        <p>
+          A special moment of faith, love, and God's blessings as Kylie Rae
+          begins her spiritual journey.
+        </p>
+
+        <!-- EDIT: CHURCH ADDRESS, DATE AND TIME -->
+        <div class="location-detail">
+          <span class="detail-icon">📍</span>
+          <div>
+            <strong>Venue</strong>
+            <span>Sto Niño Parish Church, Panabo City</span>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="detail-icon">📅</span>
+          <div>
+            <strong>Date</strong>
+            <span>November 28, 2026 (Saturday)</span>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="detail-icon">⏰</span>
+          <div>
+            <strong>Ceremony Time</strong>
+            <span>To be announced by the family.</span>
+          </div>
+        </div>
+
+        <div class="location-actions">
+          <a class="btn btn-primary"
+             href="https://www.google.com/maps/place/Santo+Ni%C3%B1o+Parish/@7.3080556,125.6838811,8a,75y,103.83h,80.19t/data=!3m7!1e1!3m5!1sM5EtiqIXJJTVEbymCJPmUA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D9.809020251694278%26panoid%3DM5EtiqIXJJTVEbymCJPmUA%26yaw%3D103.83310175928463!7i16384!8i8192!4m6!3m5!1s0x32f945b242d9bdc7:0x7f6dcc12e3d3b0e4!8m2!3d7.3077731!4d125.684488!16s%2Fg%2F1tdgmc04?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+             target="_blank" rel="noopener noreferrer">
+            📍 Get Directions
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== RECEPTION ========== -->
+<section class="section location-section" id="reception"
+  style="background:linear-gradient(180deg,#fffaf6,#fff0f3)">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Let's Celebrate Together</span>
+      <h2>Reception</h2>
+      <p>After the ceremony, let's share good food, happy moments, and lots of love.</p>
+    </div>
+
+    <article class="card location-card reveal">
+      <div class="location-banner">🏡 🎀 🌷</div>
+
+      <div class="location-body">
+        <span class="eyebrow">Food, Family & Happy Memories</span>
+        <h3>Bucar Residence</h3>
+        <p>
+          We warmly invite you to join our family for a lovely celebration
+          after Kylie Rae's Christening ceremony.
+        </p>
+
+        <!-- EDIT: RECEPTION DETAILS -->
+        <div class="location-detail">
+          <span class="detail-icon">📍</span>
+          <div>
+            <strong>Venue</strong>
+            <span>Bucar Residence – New Pandan, Panabo City</span>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="detail-icon">📅</span>
+          <div>
+            <strong>Date</strong>
+            <span>November 28, 2026 (Saturday)</span>
+          </div>
+        </div>
+
+        <div class="location-detail">
+          <span class="detail-icon">⏰</span>
+          <div>
+            <strong>Reception Time</strong>
+            <span>After the church ceremony.</span>
+          </div>
+        </div>
+
+        <div class="location-actions">
+  <a class="btn btn-primary"
+     href="https://www.google.com/maps/@7.29784,125.6838037,9a,75y,290.06h,90t/data=!3m7!1e1!3m5!1sF2wsTwHrzudN0NcR4OHMMQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DF2wsTwHrzudN0NcR4OHMMQ%26yaw%3D290.06268!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D"
+     target="_blank"
+     rel="noopener noreferrer">
+    📍 Get Directions
+  </a>
+</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== HEALTH PROTOCOL ========== -->
+<section class="section health-section" id="health">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">A Healthy Celebration</span>
+      <h2>Health & Safety Guide</h2>
+      <p>Let's help keep our little princess and everyone celebrating with us safe and comfortable.</p>
+    </div>
+
+    <div class="card health-card reveal">
+      <div class="health-grid">
+
+        <div class="health-item">
+          <div class="health-icon">🤒</div>
+          <div>
+            <strong>Please Stay Home if Unwell</strong>
+            <p>If you have a fever, cough, flu symptoms, or feel unwell, please rest at home and send your love to Kylie Rae.</p>
+          </div>
+        </div>
+
+        <div class="health-item">
+          <div class="health-icon">🧼</div>
+          <div>
+            <strong>Practice Good Hygiene</strong>
+            <p>Please wash or sanitize your hands before interacting with the baby.</p>
+          </div>
+        </div>
+
+        <div class="health-item">
+          <div class="health-icon">😷</div>
+          <div>
+            <strong>Wear a Mask if Needed</strong>
+            <p>Guests with mild respiratory symptoms or those who prefer extra protection are encouraged to wear a well-fitting mask.</p>
+          </div>
+        </div>
+
+        <div class="health-item">
+          <div class="health-icon">👶🏻</div>
+          <div>
+            <strong>Handle Our Baby Gently</strong>
+            <p>Please ask the parents before carrying Kylie Rae, avoid kissing her face and hands, and keep hands clean.</p>
+          </div>
+        </div>
+
+        <div class="health-item">
+          <div class="health-icon">🤍</div>
+          <div>
+            <strong>Respect Everyone's Comfort</strong>
+            <p>Please respect each guest's personal space and any family health precautions.</p>
+          </div>
+        </div>
+
+        <div class="health-item">
+          <div class="health-icon">💧</div>
+          <div>
+            <strong>Stay Comfortable</strong>
+            <p>Stay hydrated, follow the venue's guidelines, and help us keep the celebration clean.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="health-reminder">
+        💗 Thank you for helping us protect our little princess. Your understanding,
+        kindness, and cooperation mean so much to our family.
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-flower">🌸 🕊️ 🌸</div>
+    <h2 class="script">Kylie Rae</h2>
+    <p>A little blessing from above, surrounded by a lifetime of love.</p>
+    <p>Thank you for being part of my special day. 💗</p>
+
+    <a href="#home" class="btn btn-outline"
+       style="border-color:rgba(255,255,255,.5);color:white;background:transparent">
+      Back to the Beginning ↑
+    </a>
+
+    <div class="copyright">
+      Made with ♡ for Kylie Rae's Christening
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop"
+  aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- GALLERY LIGHTBOX -->
+<div class="lightbox" id="lightbox"
+  role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightboxClose"
+    aria-label="Close photo viewer">×</button>
+  <img id="lightboxImage" src="" alt="Expanded gallery photo">
+</div>
+
+<script>
+/* ======================================================
+   KYLIE RAE INVITATION - JAVASCRIPT
+   Vanilla JavaScript only.
+====================================================== */
+
+/* ========== MOBILE NAVIGATION ========== */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", function () {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.textContent = isOpen ? "×" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* ========== SMOOTH SCROLL ========== */
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+  link.addEventListener("click", function (event) {
+    const targetId = link.getAttribute("href");
+    const target = document.querySelector(targetId);
+
+    if (target) {
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start"
+      });
+    }
+  });
+});
+
+/* ========== SCROLL REVEAL ANIMATION ========== */
+const revealElements = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: "0px 0px -25px 0px"
+  });
+
+  revealElements.forEach(function (element) {
+    observer.observe(element);
+  });
+} else {
+  revealElements.forEach(function (element) {
+    element.classList.add("show");
+  });
+}
+
+/* ========== ACTIVE NAVIGATION LINK ========== */
+const sections = document.querySelectorAll("main section[id]");
+const navigationLinks = document.querySelectorAll(".nav-links a");
+
+function updateActiveNavigation() {
+  let currentSection = "home";
+  const scrollPosition = window.scrollY + 150;
+
+  sections.forEach(function (section) {
+    if (scrollPosition >= section.offsetTop) {
+      currentSection = section.id;
+    }
+  });
+
+  navigationLinks.forEach(function (link) {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href") === "#" + currentSection
+    );
+  });
+}
+
+/* ========== BACK TO TOP BUTTON ========== */
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+  backToTop.classList.toggle("visible", window.scrollY > 400);
+  updateActiveNavigation();
+}, { passive: true });
+
+backToTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth"
+  });
+});
+
+/* ========== GALLERY LIGHTBOX ========== */
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+let lastFocusedElement = null;
+
+function openLightbox(imageSource, imageAlt) {
+  lastFocusedElement = document.activeElement;
+  lightboxImage.src = imageSource;
+  lightboxImage.alt = imageAlt || "Kylie Rae gallery photo";
+  lightbox.classList.add("open");
+  document.body.classList.add("no-scroll");
+  lightboxClose.focus();
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("open");
+  document.body.classList.remove("no-scroll");
+  lightboxImage.removeAttribute("src");
+
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+  }
+}
+
+/*
+  Gallery placeholders intentionally do not open a lightbox.
+  When you add a real image, the click handler below opens it.
+*/
+document.querySelectorAll(".gallery-item").forEach(function (item) {
+  item.addEventListener("click", function () {
+    const image = item.querySelector("img");
+
+    if (image && image.src) {
+      openLightbox(
+        item.dataset.full || image.src,
+        image.alt || "Kylie Rae gallery photo"
+      );
+    } else {
+      // Helpful reminder while the gallery still has placeholders.
+      const placeholder = item.querySelector(".gallery-placeholder");
+      if (placeholder) {
+        placeholder.style.outline = "2px solid #d992a7";
+        setTimeout(function () {
+          placeholder.style.outline = "";
+        }, 700);
+      }
+    }
+  });
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", function (event) {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && lightbox.classList.contains("open")) {
+    closeLightbox();
+  }
+});
+
+/* ========== INITIALIZE ========== */
+updateActiveNavigation();
+</script>
+
+<!-- Kylie Rae Background Music -->
+<audio id="kylieBackgroundMusic" loop preload="auto">
+  <source src="mp3.MP3" type="audio/mpeg">
+</audio>
+
+<button
+  id="kylieMusicButton"
+  class="kylie-music-button"
+  type="button"
+  aria-label="Play background music"
+  aria-pressed="false">
+  <span id="kylieMusicIcon" aria-hidden="true">♫</span>
+  <span id="kylieMusicLabel">Play Music</span>
+</button>
+
+<style>
+  .kylie-music-button {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #d992a7, #bd788e);
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(189, 120, 142, 0.28);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .kylie-music-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(189, 120, 142, 0.35);
+  }
+
+  .kylie-music-button:focus-visible {
+    outline: 2px solid #bd788e;
+    outline-offset: 4px;
+  }
+
+  #kylieMusicIcon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .kylie-music-button.is-playing #kylieMusicIcon {
+    animation: kylieMusicPulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes kylieMusicPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+  }
+
+  @media (max-width: 480px) {
+    .kylie-music-button {
+      right: 12px;
+      bottom: 12px;
+      padding: 11px 15px;
+      font-size: 13px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kylie-music-button,
+    .kylie-music-button.is-playing #kylieMusicIcon {
+      animation: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+(() => {
+  const music = document.getElementById("kylieBackgroundMusic");
+  const button = document.getElementById("kylieMusicButton");
+  const icon = document.getElementById("kylieMusicIcon");
+  const label = document.getElementById("kylieMusicLabel");
+
+  if (!music || !button || !icon || !label) return;
+
+  music.volume = 0.30;
+
+  function updateMusicButton(isPlaying) {
+    button.classList.toggle("is-playing", isPlaying);
+    button.setAttribute("aria-pressed", String(isPlaying));
+    button.setAttribute(
+      "aria-label",
+      isPlaying ? "Pause background music" : "Play background music"
+    );
+    icon.textContent = isPlaying ? "♫" : "♪";
+    label.textContent = isPlaying ? "Pause Music" : "Play Music";
+  }
+
+  button.addEventListener("click", async () => {
+    if (music.paused) {
+      try {
+        await music.play();
+        updateMusicButton(true);
+      } catch (error) {
+        label.textContent = "Tap to Retry";
+        updateMusicButton(false);
+        label.textContent = "Tap to Retry";
+      }
+    } else {
+      music.pause();
+      updateMusicButton(false);
+    }
+  });
+
+  music.addEventListener("pause", () => updateMusicButton(false));
+  music.addEventListener("play", () => updateMusicButton(true));
+})();
+</script>
+</body>
+
+<!-- Kylie Rae: Falling Flowers Effect -->
+<div id="fallingFlowers" aria-hidden="true"></div>
+
+<style>
+  #fallingFlowers {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  #fallingFlowers .flower {
+    position: absolute;
+    top: -45px;
+    left: var(--left);
+    font-size: var(--size);
+    opacity: 0;
+    line-height: 1;
+    user-select: none;
+    will-change: transform, opacity;
+    animation: kylieFlowerFall var(--duration) linear var(--delay) infinite;
+  }
+
+  @keyframes kylieFlowerFall {
+    0% {
+      transform: translate3d(0, -5vh, 0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: var(--flower-opacity);
+    }
+    85% {
+      opacity: var(--flower-opacity);
+    }
+    100% {
+      transform: translate3d(var(--drift), 110vh, 0)
+        rotate(var(--rotation));
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #fallingFlowers {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+(() => {
+  const container = document.getElementById("fallingFlowers");
+  if (!container || container.dataset.ready) return;
+  container.dataset.ready = "true";
+
+  const flowers = ["🌸", "🌷", "✿", "❀", "🌼"];
+  const total = window.innerWidth < 600 ? 12 : 20;
+
+  for (let i = 0; i < total; i++) {
+    const flower = document.createElement("span");
+    flower.className = "flower";
+    flower.textContent =
+      flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.setProperty("--left", Math.random() * 100 + "%");
+    flower.style.setProperty("--size", (14 + Math.random() * 12) + "px");
+    flower.style.setProperty("--duration", (10 + Math.random() * 12) + "s");
+    flower.style.setProperty("--delay", (-Math.random() * 20) + "s");
+    flower.style.setProperty("--drift", (-90 + Math.random() * 180) + "px");
+    flower.style.setProperty("--rotation", (180 + Math.random() * 540) + "deg");
+    flower.style.setProperty("--flower-opacity", (0.45 + Math.random() * 0.4));
+    container.appendChild(flower);
+  }
+})();
+</script>
+</body>
+
+<!-- Kylie Rae: Soft Entrance Animations -->
+
+<style>
+  /* Initial state for elements entering the viewport */
+  .kylie-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 850ms ease,
+      transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--kylie-delay, 0ms);
+  }
+
+  .kylie-reveal.kylie-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Gentle photo entrance */
+  .kylie-reveal.kylie-photo {
+    transform: translateY(18px) scale(0.985);
+    transition:
+      opacity 950ms ease,
+      transform 950ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--kylie-delay, 0ms);
+  }
+
+  .kylie-reveal.kylie-photo.kylie-visible {
+    transform: translateY(0) scale(1);
+  }
+
+  /* Respect visitors who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .kylie-reveal,
+    .kylie-reveal.kylie-photo {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+(() => {
+  // Prevent duplicate initialization
+  if (window.kylieEntranceAnimationsInitialized) return;
+  window.kylieEntranceAnimationsInitialized = true;
+
+  // Don't interfere with visitors who prefer reduced motion
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  // Find common text, card, and photo elements.
+  // Existing .reveal elements are reused without replacing their classes.
+  const selectors = [
+    ".reveal",
+    "section h1",
+    "section h2",
+    "section h3",
+    ".card",
+    ".gallery-item",
+    ".location-card",
+    ".gift-card",
+    ".godparent-card"
+  ];
+
+  const elements = [...new Set(
+    selectors.flatMap(selector =>
+      Array.from(document.querySelectorAll(selector))
+    )
+  )];
+
+  // Avoid animating the same element twice or hiding fixed controls.
+  const targets = elements.filter(element => {
+    if (element.closest("#fallingFlowers, #kylieMusicButton")) {
+      return false;
+    }
+
+    if (
+      element.matches(
+        "script, style, audio, button, a, input, textarea, select"
+      )
+    ) {
+      return false;
+    }
+
+    // Leave elements already marked as animated by the existing page alone.
+    if (element.classList.contains("kylie-reveal")) {
+      return false;
+    }
+
+    return true;
+  });
+
+  if (reduceMotion) return;
+
+  targets.forEach((element, index) => {
+    element.classList.add("kylie-reveal");
+
+    // Gallery photos get a slightly softer entrance.
+    if (
+      element.matches(".gallery-item") ||
+      element.querySelector("img")
+    ) {
+      element.classList.add("kylie-photo");
+    }
+
+    // Small stagger, capped so large sections don't take too long.
+    const delay = (index % 4) * 100;
+    element.style.setProperty("--kylie-delay", delay + "ms");
+  });
+
+  // Reveal elements as they enter the viewport.
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("kylie-visible");
+          currentObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -35px 0px"
+    });
+
+    targets.forEach(element => observer.observe(element));
+  } else {
+    // Fallback for older browsers
+    targets.forEach(element => element.classList.add("kylie-visible"));
+  }
+})();
+</script>
+
+</html>
+
+</html>
+
+
+</body>
+</html>
